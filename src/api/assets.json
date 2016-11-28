@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "description": "MacbookPro",
+        "dateAcquired": "1/1/2016",
+        "purchasePrice": 2000.00,
+        "serialNumber": "12345"
+    },
+    {
+        "id": 2,
+        "description": "MacbookPro",
+        "dateAcquired": "6/23/2016",
+        "purchasePrice": 2500.00,
+        "serialNumber": "90120"
+    },
+    {
+        "id": 3,
+        "description": "Mouse",
+        "dateAcquired": "9/1/2016",
+        "purchasePrice": 15.00,
+        "serialNumber": "M123"
+    }
+]

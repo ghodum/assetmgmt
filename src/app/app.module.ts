@@ -10,13 +10,15 @@ import { EmployeeListComponent } from './employees/employee-list/employee-list.c
 import { AssetRoutingModule } from './assets/asset-routing.module';
 import { AssetListComponent } from './assets/asset-list/asset-list.component';
 import { WelcomeComponent } from './home/welcome/welcome.component';
+import { EmployeeDetailComponent } from './employees/employee-detail/employee-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeListComponent,
     AssetListComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    EmployeeDetailComponent
   ],
   imports: [
     BrowserModule,
