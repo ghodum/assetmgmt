@@ -1,8 +1,10 @@
 <h2>Assets</h2>
+<button class="btn btn-primary" (click)="addAsset()">Add Asset</button>
 <div class="table-responsive">
   <table class="table table-striped">
     <thead>
       <tr>
+        <th class="action-col"></th>
         <th>Description</th>
         <th>Date Aquired</th>
         <th>Purchase Price</th>
@@ -11,8 +13,16 @@
     </thead>
     <tbody>
       <tr *ngFor="let asset of assets">
+        <td class="action-col">
+          <a [routerLink]="['/asset',asset.id]">
+            <i class="glyphicon glyphicon-pencil"></i>
+          </a>
+          <a (click)="onDeleteClick(asset)">
+            <i class="glyphicon glyphicon-remove"></i>
+          </a>
+        </td>
         <td>{{asset.description}}</td>
-        <td>{{asset.dateAcquired}}</td>
+        <td>{{asset.dateAcquired | date }}</td>
         <td>{{asset.purchasePrice | currency: 'USD':true:'1.2-2'}}</td>
         <td>{{asset.serialNumber}}</td>
       </tr>

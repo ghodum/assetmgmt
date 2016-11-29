@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { CommonService } from './common/common.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeeRoutingModule } from './employees/employee-routing.module';
@@ -11,6 +12,7 @@ import { AssetRoutingModule } from './assets/asset-routing.module';
 import { AssetListComponent } from './assets/asset-list/asset-list.component';
 import { WelcomeComponent } from './home/welcome/welcome.component';
 import { EmployeeDetailComponent } from './employees/employee-detail/employee-detail.component';
+import { AssetDetailComponent } from './assets/asset-detail/asset-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { EmployeeDetailComponent } from './employees/employee-detail/employee-de
     EmployeeListComponent,
     AssetListComponent,
     WelcomeComponent,
-    EmployeeDetailComponent
+    EmployeeDetailComponent,
+    AssetDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import { EmployeeDetailComponent } from './employees/employee-detail/employee-de
     AssetRoutingModule,
     EmployeeRoutingModule
   ],
-  providers: [],
+  providers: [ CommonService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

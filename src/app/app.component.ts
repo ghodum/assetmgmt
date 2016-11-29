@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { CommonService } from './common/common.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Acme Asset Management System';
+
+  constructor(private _commonService: CommonService) {
+  }
+
 }

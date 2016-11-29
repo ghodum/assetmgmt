@@ -1,5 +1,6 @@
 <div>
   <h2>Employee</h2>
+  <div *ngIf="errorMessage" class="alert alert-danger" role="alert">{{errorMessage}}</div>
   <div class="form-group">
     <label for="firstName">First Name</label>
     <input type="text" class="form-control" 
