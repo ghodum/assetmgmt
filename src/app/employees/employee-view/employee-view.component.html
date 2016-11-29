@@ -1,0 +1,49 @@
+<div>
+  <h2>Employee</h2>
+  <div class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-2 control-label">First Name</label>
+      <div class="col-sm-10">
+        <p class="form-control-static">{{employee.firstName}}</p>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-2 control-label">Last Name</label>
+      <div class="col-sm-10">
+        <p class="form-control-static">{{employee.lastName}}</p>
+      </div>
+    </div>
+    
+    <button type="submit" class="btn btn-primary" (click)="onEdit()">Edit</button>
+    <button class="btn btn-warning" (click)="onCancel()">Cancel</button>
+  </div>
+
+  <h2>Employee Assets</h2>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class="action-col"></th>
+          <th>Description</th>
+          <th>Date Aquired</th>
+          <th>Purchase Price</th>
+          <th>Asset Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let asset of employeeAssets">
+          <td class="action-col">
+            <a (click)="onAssetDeleteClick(asset)">
+              <i class="glyphicon glyphicon-remove"></i>
+            </a>
+          </td>
+          <td>{{asset.description}}</td>
+          <td>{{asset.dateAcquired | date }}</td>
+          <td>{{asset.purchasePrice | currency: 'USD':true:'1.2-2'}}</td>
+          <td>{{asset.serialNumber}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="onAddAsset()">Add Asset</button>
+</div>

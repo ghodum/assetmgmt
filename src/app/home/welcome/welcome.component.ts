@@ -5,8 +5,7 @@ import { AssetService } from '../../assets/asset.service';
 
 @Component({
   templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.css'],
-  providers: [ EmployeeService, AssetService ]
+  styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
   employeeCount: number = -1;

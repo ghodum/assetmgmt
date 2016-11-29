@@ -65,6 +65,20 @@ export class AssetService {
         .catch(this.handleError);
   }
 
+  patchAsset(id: number, assetData: any): Observable<Asset> {
+    return this._http.patch(this.getAssetUrl(id), assetData)
+        .map((response: Response) => response.json())
+        .do(data => console.log(`All: ${JSON.stringify(data)}`))
+        .catch(this.handleError);
+  }
+
+  unassignedAssets(): Observable<Asset[]> {
+    return this._http.get(`${this.getAssetsUrl()}?filter={"where":{"employeeId":null}}`)
+        .map((response: Response) => response.json())
+        .do(data => console.log(`All: ${JSON.stringify(data)}`))
+        .catch(this.handleError);
+  }
+
   private handleError(error: Response) {
     console.error(error);
     return Observable.throw(error.json().error.message || 'Server error');

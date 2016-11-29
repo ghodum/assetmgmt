@@ -6,8 +6,7 @@ import { EmployeeService } from '../employee.service';
 
 @Component({
   templateUrl: './employee-list.component.html',
-  styleUrls: ['./employee-list.component.css'],
-  providers: [ EmployeeService ]
+  styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
   errorMessage: String;
@@ -22,7 +21,7 @@ export class EmployeeListComponent implements OnInit {
   }
 
   addEmployee(): void {
-    this._router.navigate(['/employee/0']);
+    this._router.navigate(['/employee/edit/0']);
   }
 
   onDeleteClick(employee: Employee): void {

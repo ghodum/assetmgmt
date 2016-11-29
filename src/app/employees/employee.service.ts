@@ -9,6 +9,7 @@ import 'rxjs/add/operator/catch';
 
 import { CommonService } from '../common/common.service';
 import { Employee } from './employee'
+import { Asset } from '../assets/asset'
 
 @Injectable()
 export class EmployeeService {
@@ -18,9 +19,13 @@ export class EmployeeService {
   private _employeeRemoteUrl = 'http://0.0.0.0:3000/api/Employees/';
   private _employeeCountLocalUrl = 'api/employee_count.json';
   private _employeeCountRemoteUrl = 'http://0.0.0.0:3000/api/Employees/count';
+private time;
+private num;
 
   constructor(private _http: Http,
               private _commonService: CommonService) {
+      this.time = new Date().getTime();
+      this.num = Math.floor(Math.random() * 1000)
   }
 
   getEmployees(): Observable<Employee[]> {
@@ -61,6 +66,13 @@ export class EmployeeService {
   countEmployees(): Observable<number> {
     return this._http.get(this.getEmployeeCountUrl())
         .map((response: Response) => response.json().count)
+        .do(data => console.log(`All: ${JSON.stringify(data)}`))
+        .catch(this.handleError);
+  }
+
+  getEmployeeAssets(id: number): Observable<Asset[]> {
+    return this._http.get(`${this.getEmployeesUrl()}/${id}/assets`)
+        .map((response: Response) => response.json())
         .do(data => console.log(`All: ${JSON.stringify(data)}`))
         .catch(this.handleError);
   }

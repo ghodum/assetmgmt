@@ -6,8 +6,7 @@ import { AssetService } from '../asset.service';
 
 @Component({
   templateUrl: './asset-list.component.html',
-  styleUrls: ['./asset-list.component.css'],
-  providers: [ AssetService ]
+  styleUrls: ['./asset-list.component.css']
 })
 export class AssetListComponent implements OnInit {
   assets: Asset[] = [];

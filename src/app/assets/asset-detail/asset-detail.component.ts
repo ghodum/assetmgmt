@@ -8,8 +8,7 @@ import { AssetService } from '../asset.service';
 
 @Component({
   templateUrl: './asset-detail.component.html',
-  styleUrls: ['./asset-detail.component.css'],
-  providers: [ AssetService ]
+  styleUrls: ['./asset-detail.component.css']
 })
 export class AssetDetailComponent implements OnInit {
   asset: Asset = {

@@ -4,15 +4,24 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { CommonService } from './common/common.service';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { EmployeeService } from './employees/employee.service';
 import { EmployeeRoutingModule } from './employees/employee-routing.module';
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
+import { EmployeeDetailComponent } from './employees/employee-detail/employee-detail.component';
+import { EmployeeViewComponent } from './employees/employee-view/employee-view.component';
+
+import { AssetService } from './assets/asset.service';
 import { AssetRoutingModule } from './assets/asset-routing.module';
 import { AssetListComponent } from './assets/asset-list/asset-list.component';
-import { WelcomeComponent } from './home/welcome/welcome.component';
-import { EmployeeDetailComponent } from './employees/employee-detail/employee-detail.component';
 import { AssetDetailComponent } from './assets/asset-detail/asset-detail.component';
+import { AssetPickerComponent } from './assets/asset-picker/asset-picker.component';
+
+import { WelcomeComponent } from './home/welcome/welcome.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +30,9 @@ import { AssetDetailComponent } from './assets/asset-detail/asset-detail.compone
     AssetListComponent,
     WelcomeComponent,
     EmployeeDetailComponent,
-    AssetDetailComponent
+    AssetDetailComponent,
+    EmployeeViewComponent,
+    AssetPickerComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +42,7 @@ import { AssetDetailComponent } from './assets/asset-detail/asset-detail.compone
     AssetRoutingModule,
     EmployeeRoutingModule
   ],
-  providers: [ CommonService ],
+  providers: [ CommonService, AssetService, EmployeeService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

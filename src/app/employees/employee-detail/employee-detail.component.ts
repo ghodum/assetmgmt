@@ -8,8 +8,7 @@ import { EmployeeService } from '../employee.service';
 
 @Component({
   templateUrl: './employee-detail.component.html',
-  styleUrls: ['./employee-detail.component.css'],
-  providers: [ EmployeeService ]
+  styleUrls: ['./employee-detail.component.css']
 })
 export class EmployeeDetailComponent implements OnInit {
   employee: Employee = {
@@ -24,6 +23,7 @@ export class EmployeeDetailComponent implements OnInit {
   constructor(private _route: ActivatedRoute,
               private _router: Router,
               private _employeeService: EmployeeService) {
+                debugger;
   }
 
   ngOnInit(): void {

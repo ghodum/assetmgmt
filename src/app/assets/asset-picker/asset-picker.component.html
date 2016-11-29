@@ -1,0 +1,27 @@
+<h2>Select Assets</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="action-col"></th>
+        <th>Description</th>
+        <th>Date Aquired</th>
+        <th>Purchase Price</th>
+        <th>Asset Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let asset of assets">
+        <td class="action-col">
+          <input type="checkbox" (change)="onSelectionChange(asset)">
+        </td>
+        <td>{{asset.description}}</td>
+        <td>{{asset.dateAcquired | date }}</td>
+        <td>{{asset.purchasePrice | currency: 'USD':true:'1.2-2'}}</td>
+        <td>{{asset.serialNumber}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<button class="btn btn-primary" (click)="onAddAssets()" [disabled]="_selectedAssetIds.length == 0">Add</button>
+<button class="btn btn-warning" (click)="onCancel()">Cancel</button>
